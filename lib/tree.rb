@@ -64,7 +64,11 @@ class Tree
         current
     end
 
-    
+    def find(value, node = @root)
+        return node if node.nil? || node.data == value
+
+        value < node.data ? find(value, node.left) : find(value, node.right)
+    end
 
 end
 
